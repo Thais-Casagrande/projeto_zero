@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projeto Zero Web</title>
+</head>
+<body>
+    <h1>Lembretes do Banco</h1>
+ <!-- O JavaScript vai usar esse id="lista" para saber exatamente onde deve "injetar" os dados que chegarem do banco de dados -->
+    <ul id="lista"></ul>
+
+ <!-- Aqui no script usamos o fetch para navegador fazer uma requisição HTTP para o seu servidor local (rodando na porta 3000) --> 
+    <script>
+        fetch('http://localhost:3000/dados')
+        //Aqui no script usamos o fetch para navegador fazer uma requisição HTTP para o seu servidor local (rodando na porta 3000)
+            .then(res => res.json()) // Quando o servidor responde, os dados chegam em formato de texto bruto. 
+            // Essa linha converte esse texto em um objeto JSON 
+            .then(data => { // Aqui o código assume que data é uma lista de lembretes e percorre cada item dessa lista, um por um
+                const lista = document.getElementById('lista');
+                data.forEach(item => {
+                    lista.innerHTML += `<li>${item.conteudo}</li>`; // Para cada item encontrado, ele cria uma nova "etiqueta" de lista
+                });
+            });
+    </script>
+</body>
+</html>

@@ -13,7 +13,7 @@ export default function TabOneScreen() {//vai carregar esse function assim que o
 
   useEffect(() => {// meu gatilho de ação useeffect vao receber o fetch
     // aqui vai o endereço de IPv4 :3000/dados 
-    fetch('http://192.168.1.10:3000/dados') //esse é o meu, coloque o de vocês
+    fetch('http://111.111.1.11:3000/dados') //coloque o seu IP
       .then(res => res.json()) //quando server responde, trabforma em json
       .then(json => {
         setDados(json);// pega lista do BD e guarda na variável dados

@@ -10,7 +10,7 @@ app.use(express.json());// fala para o express entender quando enviamos dados Js
 // agora vamos fazer a comunicação com o mysql
 const db = mysql.createConnection({
     host: 'localhost',// nesse caso o banco está meu computador
-    user: 'root', 
+    user: '  ',  // geralmente o usuário é root
     password: '', // Senha padrão do xampp costuma ser vazia
     database: 'projeto_zero'// nome do meu banco
 });
